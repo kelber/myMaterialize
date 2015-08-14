@@ -12,6 +12,11 @@ angular.module('myApp', [
 				templateUrl:  'welcome/index.html',
 				controller:  'WelcomeCtrl as welcomeCtrl'
 
+			})
+			.state('ultravisao', {
+				url: '/ultravisao',
+				templateUrl: 'welcome/ultravisao.tpl.html',
+				controller:  'WelcomeCtrl as welcomeCtrl'
 			});
 			$urlRouterProvider.otherwise('/');
 			
