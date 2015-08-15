@@ -1,29 +1,49 @@
+
+
+<!-- <div ng-include="'welcome/header.tpl.html'"></div> -->
+
 <nav>
     <div class="nav-wrapper grey darken-3">
-      <a href="#!" class="brand-logo">ULTRAVISAO</a>
+      <a ui-sref="welcome"  class="brand-logo">ULTRAVISAO</a>
       <ul class="right">
-        <li><a href="sass.html">Login</a></li>
-        <li><a href="badges.html">Sign Up</a></li>
+
+		<!-- Modal Trigger -->
+		<li><a class="waves-effect waves-light modal-trigger"  href="#modal1">Login</a></li>
+		<li><a class="waves-effect waves-light tea modal-trigger"  href="#modal2">Registrar-se</a></li>
+
       </ul>
     </div>
   </nav>
 
 
+
 <div class="container">
 
 	<h2 align="center"> Ultravisao Franchising 2015</h2>
-	<div class="row cartao">
-	<div class="col s12 offset-m3 m6  grey darken-4">
-		<h4 align="center">Kelber Stuchi</h4>
-		<h5 align="center">(11) 94909-8080 </h5>
-	</div>
-	</div>
+	<div class="row">
+		<div class="col s12 offset-m3 m5 z-depth-5 ">
+			<img class="cartao center-align" ng-src="cartao.jpg"></div>
+		</div>
 	<hr />
-	<div class="center">
+	<div class="center-align">
 		<button class="btn btn-primary yellow darken-2  z-depth-4" ui-sref="ultravisao">Saiba Mais</button>
 	</div>
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+	<div ng-include="'auth/messages.tpl.html'"></div>
+	<div ng-include="'auth/login.tpl.html'"></div> 
+    </div>
+  </div>
 
+  <!-- Modal Structure -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+		<div ng-include="'auth/messages.tpl.html'"></div>
+		<div ng-include="'auth/register.tpl.html'"></div> 
+    </div>
+  </div>
 
 
 
@@ -31,4 +51,9 @@
 
 </div>
 
-
+<script type="text/javascript" charset="utf-8">
+	 $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+</script>
